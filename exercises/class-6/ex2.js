@@ -1,5 +1,5 @@
 function inclusiveRange (start, end) {
-    let range=[];
+    let range = [];
     if (start > end) {
         for (let i = start; i >= end; i--) {
             range.push(i);
@@ -10,6 +10,10 @@ function inclusiveRange (start, end) {
         for (let i = start; i <= end; i++) {
             range.push(i);
         }
+        return range;
+    }
+    else {
+        range = [start];
         return range;
     }
 }
