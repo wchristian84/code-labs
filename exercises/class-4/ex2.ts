@@ -1,8 +1,8 @@
-function countTrue(array) {
-    var numOfTrue = 0;
-    for (var i = 0; i < array.length; i++) {
+function countTrue(array: boolean[]) {
+    let numOfTrue = 0;
+    for (let i = 0; i < array.length; i++) {
         if (array[i] === true) {
-            numOfTrue++;
+        numOfTrue++;
         }
     }
     return numOfTrue;

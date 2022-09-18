@@ -1,9 +1,9 @@
 // Global Variables \\
 let formSubmit = document.querySelector("#form-submit");
-let textInput = document.querySelector("#to-save");
-let savedInputs = JSON.parse(localStorage.getItem('input')) || [];
-let displayInputs = document.querySelector('#saved-text');
-let form = document.querySelector(".input-form");
+let textInput = document.querySelector("#to-save") as HTMLInputElement;
+let savedInputs: string[] = JSON.parse(localStorage.getItem('input')) || [];
+let displayInputs = document.querySelector('#saved-text') as HTMLElement;
+let form = document.querySelector(".input-form") as HTMLFormElement;
 
 // Function declarations \\
 function getFormInput(e) {
@@ -19,13 +19,13 @@ function getFormInput(e) {
 
 }
 
-function populateSavedInput(inputs = []) {
+function populateSavedInput(inputs: string[]) {
     displayInputs.innerHTML = inputs.map((input) => `<li>${input}</li>`)
     .join('');
 
 }
 
-function saveInput(input = []) {
+function saveInput(input: string[]) {
     localStorage.setItem('input', JSON.stringify(input));
 }
 

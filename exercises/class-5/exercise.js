@@ -15,12 +15,10 @@ function getFormInput(e) {
     form.reset();
 }
 function populateSavedInput(inputs) {
-    if (inputs === void 0) { inputs = []; }
     displayInputs.innerHTML = inputs.map(function (input) { return "<li>".concat(input, "</li>"); })
         .join('');
 }
 function saveInput(input) {
-    if (input === void 0) { input = []; }
     localStorage.setItem('input', JSON.stringify(input));
 }
 // Event listeners \\
