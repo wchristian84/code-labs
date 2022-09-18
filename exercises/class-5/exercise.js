@@ -1,36 +1,29 @@
 // Global Variables \\
-let formSubmit = document.querySelector("#form-submit");
-let textInput = document.querySelector("#to-save");
-let savedInputs = JSON.parse(localStorage.getItem('input')) || [];
-let displayInputs = document.querySelector('#saved-text');
-let form = document.querySelector(".input-form");
-
+var formSubmit = document.querySelector("#form-submit");
+var textInput = document.querySelector("#to-save");
+var savedInputs = JSON.parse(localStorage.getItem('input')) || [];
+var displayInputs = document.querySelector('#saved-text');
+var form = document.querySelector(".input-form");
 // Function declarations \\
 function getFormInput(e) {
     e.preventDefault;
     savedInputs.push(textInput.value);
-
-    const newItem = document.createElement('li');
-    newItem.innerText = `${textInput.value}`;
+    var newItem = document.createElement('li');
+    newItem.innerText = "".concat(textInput.value);
     displayInputs.appendChild(newItem);
-
     saveInput(savedInputs);
     form.reset();
-
 }
-
-function populateSavedInput(inputs = []) {
-    displayInputs.innerHTML = inputs.map((input) => `<li>${input}</li>`)
-    .join('');
-
+function populateSavedInput(inputs) {
+    if (inputs === void 0) { inputs = []; }
+    displayInputs.innerHTML = inputs.map(function (input) { return "<li>".concat(input, "</li>"); })
+        .join('');
 }
-
-function saveInput(input = []) {
+function saveInput(input) {
+    if (input === void 0) { input = []; }
     localStorage.setItem('input', JSON.stringify(input));
 }
-
 // Event listeners \\
 formSubmit.addEventListener('click', getFormInput);
-
 // On load run: \\
 populateSavedInput(savedInputs);

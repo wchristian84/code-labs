@@ -1,16 +1,15 @@
-function asciiCapitalize(string) {
-    let output = [];
-    for (let i = 0; i < string.length; i++) {
-        if (string.charCodeAt(i) % 2 == 0) {
-            output.push(string.charAt(i).toUpperCase());
+function asciiCapitalize(input) {
+    var output = [];
+    for (var i = 0; i < input.length; i++) {
+        if (input.charCodeAt(i) % 2 == 0) {
+            output.push(input.charAt(i).toUpperCase());
         }
         else {
-            output.push(string.charAt(i).toLowerCase());
+            output.push(input.charAt(i).toLowerCase());
         }
     }
     return output;
 }
-
 console.log(asciiCapitalize("to be or not to be!"));
 console.log(asciiCapitalize("THE LITTLE MERMAID"));
 console.log(asciiCapitalize("Oh what a beautiful morning."));

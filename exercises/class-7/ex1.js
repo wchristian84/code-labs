@@ -4,3 +4,4 @@ function redundantReturn(str) {
     }
     return returnStr();
 }
+console.log(redundantReturn('Hello, World'));
