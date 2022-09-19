@@ -8,7 +8,7 @@ function asciiCapitalize(input) {
             output.push(input.charAt(i).toLowerCase());
         }
     }
-    return output;
+    return output.join('');
 }
 console.log(asciiCapitalize("to be or not to be!"));
 console.log(asciiCapitalize("THE LITTLE MERMAID"));
